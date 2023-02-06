@@ -5,5 +5,6 @@ astro= requests.get("http://api.open-notify.org/astros.json").json()
 
 # afficher la liste des astronautes actuellement dans l'espace
 for personne in astro["people"]:
-    print(personne)
+    if personne["craft"] == "ISS":
+        print(personne)
 
